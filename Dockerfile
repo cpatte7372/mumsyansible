@@ -7,13 +7,6 @@ LABEL Description="This image is used to start the ansible-playable web server. 
 # Reset Root Password
 RUN echo "root:P@ssw0rd@123" | chpasswd
 
-# Install Ansible
-RUN apt-get update && \
-    apt-get install python-setuptools python-dev build-essential -y && \
-    easy_install pip && \
-    pip install ansible && \
-    pip install pyOpenSSL==16.2.0
-
 # -----------------------------------------------------------
 
 # Install MongoDB
